@@ -2,7 +2,7 @@
   "name": "density",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "npm run build && nodemon dist/main & watch 'npm run build' src",
     "build": "babel src -d dist"
@@ -28,6 +28,7 @@
     "babel-polyfill": "^6.13.0",
     "koa": "^2.0.0-alpha.5",
     "koa-router": "^7.0.1",
+    "mongoose": "^4.5.8",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "twitter": "^1.4.0"
