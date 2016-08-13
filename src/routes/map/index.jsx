@@ -1,9 +1,11 @@
 import React from 'react';
 import server from 'react-dom/server';
 
+import Twitter from 'twitter';
 import View from './view';
 
 
+const twitter = new Twitter();
 /**
  * gets the credentials for twitter.
  */
