@@ -41,11 +41,10 @@ export const map = ctx => {
         console.log(tweets);
 
         const statuses = tweets.statuses;
-
         const props = { statuses };
 
-          ctx.body = server.renderToStaticMarkup(<View {...props} />);
-          resolve();
+        ctx.body = server.renderToStaticMarkup(<View {...props} />);
+        resolve();
       }
     });
   })
