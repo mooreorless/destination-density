@@ -7,7 +7,7 @@ var fs = require('fs'),
 xml2js = require('xml2js');
 
 var badTextTweet = ["hotel", "book", "your", "?", "available", "cheap", "plans", "take", "buy", "reserv", "promo", "with us", "tag", "tour", "package",
-                   "ticket", "sell", "guineas", "reason"];
+                   "ticket", "sell", "guineas", "reason", "read"];
 var goodTextTweet = ["solo"];
 var badUserText = ["hotel", "travel", "co", "info", "new"]
 
@@ -47,7 +47,7 @@ const twitter = new Twitter({
 var lastUserName = "";
 
 router.get('/', (req, res, next) => {
-  twitter.stream('statuses/filter', {track: 'holiday,traveling', language: 'en'}, (stream) => {
+  twitter.stream('statuses/filter', {track: 'traveling', language: 'en'}, (stream) => {
     stream.on('data', (event) => {
         if(event.text.indexOf("RT @") == -1){//Not a response
             var t = event.text.toLowerCase();
