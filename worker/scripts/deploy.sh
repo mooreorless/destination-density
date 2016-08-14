@@ -8,14 +8,14 @@ if [[ ! -d density ]]; then
 
   git init
   git config core.sparsecheckout true
-  git remote add -f origin #add repo here
+  git remote add -f origin https://github.com/mooreorless/destination-density.git
   echo worker/ >> .git/info/sparse-checkout
-  git pull master
+  git pull origin master
 
   popd
 else
   pushd density
-  git pull master
+  git pull origin master
   popd
 fi
 popd
@@ -24,6 +24,7 @@ popd
 # update worker package
 pushd ~/density/worker
 npm i
+npm run build
 popd
 
 
@@ -33,6 +34,6 @@ if [[ $? -eq 0 ]]; then
   forever restart worker
 else
   pushd ~/density/worker
-    forever -a --uid worker start main.js
+    forever -a --uid worker start dist/main.js
   popd
 fi

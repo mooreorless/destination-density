@@ -3,17 +3,18 @@
  */
 import router from 'koa-router';
 
-// TODO: add a query route
-import map from './map';
+import search from './search';
+import results from './results';
+
 
 const mainRouter = router();
-
 
 /**
  * attach routes here.
  */
 mainRouter
-  .get('/', map);
+  .get('/results', results)
+  .get('/', search);
 
 
 /**

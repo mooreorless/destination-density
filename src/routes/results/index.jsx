@@ -20,7 +20,7 @@ const twitter = new Twitter({
 /**
  * the map route.
  */
-export const map = ctx => {
+export const results = ctx => {
 
   /** TODO: this needs to be utilised. */
   // twitter.stream('statuses/filter', {track: 'travel'}, (stream) => {
@@ -50,4 +50,4 @@ export const map = ctx => {
   })
 }
 
-export default map;
+export default results;
